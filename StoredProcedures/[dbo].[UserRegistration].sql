@@ -13,6 +13,7 @@ CREATE PROCEDURE [dbo].[UserRegistration]
     @UserName NVARCHAR(100),
     @Password NVARCHAR(100),
     @Email NVARCHAR(100),
+    @PhoneNumber BIGINT,
     @IsActive BIT
 AS
 BEGIN
@@ -22,8 +23,8 @@ BEGIN
         RETURN;
     END
    
-    INSERT INTO dbo.Registration (UserName, Password, Email, IsActive)
-    VALUES (@UserName, @Password, @Email, @IsActive);
+    INSERT INTO dbo.Registration (UserName, Password, Email,PhoneNumber, IsActive)
+    VALUES (@UserName, @Password, @Email, @PhoneNumber, @IsActive);
 
     SELECT 'Data Inserted' AS Result;
 END
