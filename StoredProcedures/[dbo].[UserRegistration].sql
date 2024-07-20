@@ -8,12 +8,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
 CREATE PROCEDURE [dbo].[UserRegistration]
     @UserName NVARCHAR(100),
     @Password NVARCHAR(100),
     @Email NVARCHAR(100),
-    @PhoneNumber BIGINT,
+    @PhoneNumber NVARCHAR(100),
     @IsActive BIT
 AS
 BEGIN
