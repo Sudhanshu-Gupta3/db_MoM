@@ -22,7 +22,7 @@ BEGIN
         RETURN;
     END
    
-    INSERT INTO dbo.Registration (UserName, Password, Email,PhoneNumber, IsActive)
+    INSERT INTO dbo.Registration (UserName, Password, Email,[Phone-Number], IsActive)
     VALUES (@UserName, @Password, @Email, @PhoneNumber, @IsActive);
 
     SELECT 'Data Inserted' AS Result;
