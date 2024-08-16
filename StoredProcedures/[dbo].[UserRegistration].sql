@@ -16,13 +16,13 @@ CREATE PROCEDURE [dbo].[UserRegistration]
     @IsActive BIT
 AS
 BEGIN
-    IF EXISTS (SELECT 1 FROM dbo.Registration (nolock) WHERE UserName = @UserName OR Email = @Email)
+    IF EXISTS (SELECT 1 FROM dbo.Tblusermaster (nolock) WHERE UserName = @UserName OR Email = @Email)
 	BEGIN
         SELECT 'Username or Email already exists' AS Result;
         RETURN;
     END
    
-    INSERT INTO dbo.Registration (UserName, Password, Email,[Phone-Number], IsActive)
+    INSERT INTO dbo.Tblusermaster (UserName, Password, Email,[Phone-Number], IsActive)
     VALUES (@UserName, @Password, @Email, @PhoneNumber, @IsActive);
 
     SELECT 'Data Inserted' AS Result;
